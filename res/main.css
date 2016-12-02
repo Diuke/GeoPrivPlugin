@@ -43,6 +43,6 @@ p{
     
 }
 .logo{
-    margin-left: calc(50% - 406px);
+    margin-left: calc(50% - (406px/2));
     
 }
