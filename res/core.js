@@ -6,7 +6,7 @@ $(document).ready(function(){
 
 var updateTime = function(){
     var currentDate = new Date();
-    var date = new Date(2016, 12, 11, 7);
+    var date = new Date(2016, 12, 11, 6, 30);
 
     //var time = (date.getDate()*24*60*60) + (date.getHours()*60*60) + (date.getMinutes()*60) + date.getSeconds();
     //var currentTime = (currentDate.getDate()*24*60*60) + (currentDate.getHours()*60*60) + (currentDate.getMinutes()*60) + currentDate.getSeconds();;
