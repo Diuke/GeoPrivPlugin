@@ -1,0 +1,50 @@
+@font-face {
+    font-family: "ClockFont";
+    src: url("digital-7.ttf") format("truetype");
+}
+@font-face{
+    font-family: "eras";
+    src: url(eras.ttf);
+}
+.clock { 
+    font-family: "ClockFont";
+    font-size: 2em;
+}
+.inline{
+    display: inline;
+    font-size: 2em;
+}
+html{
+    background: #f44242;
+    min-width: 400px;
+}
+
+.container{
+    width: 80%;
+    height: 80%;
+    background-color: white;
+    border-radius: 7%;
+    margin: 0 auto;
+    margin-top: 5%;
+}
+.clockWrapper{
+    margin: 0 auto;
+    text-align: center;
+}
+.social{
+    margin: 0 auto;
+}
+p{
+    margin-top: 5px;
+}
+.eras{
+    font-family: 'eras'; 
+    font-size: 2em; 
+    padding-top: 5px;
+    margin-bottom: 5px;
+    
+}
+.logo{
+    margin-left: calc(50% - 72px); 
+    
+}
