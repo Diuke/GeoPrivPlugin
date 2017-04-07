@@ -1,30 +1,53 @@
 <!DOCTYPE html>
 <html>
-
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="res/main.css">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <title>iEmotions</title>
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css">
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/styles.css">
     </head>
+    
     <body>
-
         <div class="container">
-            
-            <div class="clockWrapper">
-                <p class="eras">FALTAN</p>
-                <div>
-                    <p class="clock inline" id="day"></p>
-                    </b><P class="inline"  style="padding-left: 20px; font-family: 'eras'" >DIAS</p>
+            <div class="row" style="margin-top: 10%">
+                <div class="col-xs-12 center-content">
+                    <h1 class="appTitle">iEmotions</h1>
                 </div>
-                <p class="clock "id="hour"></p>
             </div>
-        <img class="logo" src="res/logo.jpg"> 
+            <div class="row" style="margin-top: 10%"></div>
+            <div class="row">
+                <div class="col-xs-12 center-content button soft-purple" id="ignorar">
+                    <h1>IGNORAR</h1>
+                </div>
+                <div class="col-xs-12 center-content button soft-red" id="si">
+                    <h1>SI</h1>
+                </div>
+                <div class="col-xs-12 center-content button soft-blue" id="no">
+                    <h1>NO</h1>
+                </div>
+                <div class="col-xs-12 center-content button soft-green" id="nope">
+                    <h1>NOPE</h1>
+                </div>
+                <div class="col-xs-12 center-content button soft-orange" id="sapbe">
+                    <h1>SAPBEEEE</h1>
+                </div>
+                <div class="col-xs-12 center-content button last soft-yellow" id="jueputa">
+                    <h1>JUEPUTA</h1>
+                </div>
+                
+            </div>
         </div>
-    <!--
-        <div class="social">
-            <img src="res/facebook.png" height="50px" width="50px">
-        </div>
-    -->
-        <script src="res/jquery-1.11.1.min.js"></script>
-        <script src="res/core.js"></script>
+        
+        
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="bower_components/SoundManager2/script/soundmanager2-jsmin.js"></script>
+        <script src="assets/app.js"></script>
     </body>
+    
+
+
 </html>

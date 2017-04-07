@@ -1,0 +1,13 @@
+{
+  "name": "iEmotions",
+  "authors": [
+    "Diuke <juan-pablo-duque@hotmail.com>"
+  ],
+  "description": "vacile",
+  "main": "index.html",
+  "license": "MIT",
+  "homepage": "index.html",
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
