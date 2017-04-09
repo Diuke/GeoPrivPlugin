@@ -11,3 +11,6 @@ Proximamente:
 -	Muchas mas emociones y respuestas.
 -	Emociones personalizadas (guardadas localmente)
 -	Muchas cosas mas!
+
+Haz la prueba!
+Diuke.github.io
