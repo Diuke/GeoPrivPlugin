@@ -1,32 +1,328 @@
-<!doctype html> <html> <head> <meta charset="utf-8"> <title></title> <meta name="description" content=""> <meta name="viewport" content="width=device-width"> <!-- Place favicon.ico and apple-touch-icon.png in the root directory --> <link rel="stylesheet" href="styles/vendor.96921311.css"> <link rel="stylesheet" href="styles/main.2fff859a.css"> </head> <body ng-app="iEmotionsApp"> <!--[if lte IE 8]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]--> <!-- Add your site or application content here //Under develpment//
-    <div class="header">
-      <div class="navbar navbar-default" role="navigation">
-          <div class="navbar-header">
+<!DOCTYPE html>
 
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
+<head>
+    <title>GeoPriv</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,500i,700,800i" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <link href="css/index.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
 
-            <a class="navbar-brand">iEmotions</a>
-          </div>
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon/site.webmanifest">
+    <link rel="mask-icon" href="assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+</head>
 
-          <div class="collapse navbar-collapse" id="js-navbar-collapse">
+<body>
 
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="#/">Home</a></li>
+    <nav class="navbar navbar-expand-sm  navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
+            aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#usage">Usage</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contribute">Contribute</a>
+                </li>
+
             </ul>
-          </div>
-      </div>
-    </div>
---> <div ng-view=""></div> <div class="footer"> <div class="container"> <p class="center-content"><span class="glyphicon glyphicon-triangle-right"></span> Created by <a href="https://github.com/Diuke" target="_blank">Diuke</a> <span class="glyphicon glyphicon-triangle-left"></span></p> </div> </div> <!-- Google Analytics: change UA-XXXXX-X to be your site's ID --> <script>!function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
-       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
-       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
-       }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+            <div class="social-part">
+                <a class="nav-link" target="new" href="https://github.com/Diuke/GeoPriv"><i style="font-size:24px" class="fa fa-github" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </nav>
 
-       ga('create', 'UA-XXXXX-X');
-       ga('send', 'pageview');</script> <script src="scripts/vendor.6fe598b7.js"></script><script src="scripts/SoundManager2/script/soundmanager2.js"></script><script src="scripts/scripts.1c223f1c.js"></script> </body> </html>
+    <div class="container-fluid" style="height: 560px; vertical-align: middle" id="home">
+        <div class="row" style="height: 100%">
+            <div class="col" style="text-align: right">
+                <span class="img-wrapper"></span>
+                <img src="assets/icon.png" style="vertical-align: middle;">
+            </div>
+            <div class="col" style="float:left; position: relative; top: 40%">
+                <div class="text-wrapper">
+                    <h1 style="vertical-align: middle">Geoprivacy Plugin</h1>
+                    <h2 style="vertical-align: middle">A set of location privacy tools <br> for geographic data.</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <a class="anchor" id="about"></a>
+    <div class="container mt-5 mb-5">
+        <div class="row">
+            <h2 class="title w-100">About</h2>
+            <p>
+                GeoPriv is a plugin for QGIS 3+ that offers location privacy protection mechanisms for users to protect 
+                the privacy of their datasets before publishing or putting them on maps.
+            </p>
+            <p>
+                In GeoPriv you can choose between three location privacy methods that can be found in scientific articles and 
+                that we have implemented to be easily used by technical and non-technical users, providing location privacy for everyone! <br>
+                The location privacy methods implemented works with Vector Layers that have Point geometries only and provide privacy 
+                by obfuscation and k-anonymity.
+            </p>
+            <p>
+                This plugin is our final project for our Computer Science undergrad and is intended to help the Open Source and the GIS community 
+                with a reliable tool for geoprivacy.
+            </p>
+        </div>
+    </div>
+ 
+    <hr>
+
+    <a class="anchor" id="usage"></a>
+    <div class="container mt-5 mb-5" >
+        <div class="row">
+            <h2 class="title w-100">Usage</h2> 
+            <p>
+                Along this brief tutorial we will be using <a href="assets/downloads/test_dataset.csv" download="test_dataset.csv">this sample dataset</a>, consisting of 18967 points of locations of Tweets 
+                from Milano, Italy. Feel free to download it.<br>
+            </p>
+            <p class="w-100">
+                Index:
+            </p>
+                <ul>
+                    <li><a href="#started">Getting started</a></li>
+                    <li><a href="#functionalities">Functionalities</a></li>
+                    <li><a href="#lppm">The Location Privacy Protection Mechanisms (LPPM)</a></li>
+                </ul>
+            
+                <!--Seccion Getting Started-->
+            <a class="anchor" id="started"></a>
+            <h4 class="subtitle w-100" id="started">Getting Started</h4>
+            <p>
+                This plugin integrates three Location Privacy Protection Mechanisms (or LPPM) that were extracted from academic papers and research 
+                to provide technical and non-technical folks a suite of geoprivacy methods to protect their datasets before publishing or exporting.
+                This plugin works with <strong>vector layers</strong> that have <strong>Point</strong> geometries (Multipoint geometries are not supported yet) 
+                and process the layer data with the selected LPPM.
+            </p>
+            <p>
+                There are several categories for LPPMs, but for this kind of data we chose to work with obfuscation and K-Anonymity methods, that 
+                are well suited for Point geometries and for offline data. <br>
+                Obfuscation methods hide the original location by changing the longitude and latitude of the point to new ones, while K-Anonymity 
+                hides user information and location by grouping similar or close points to be indistinguishable between them.
+            </p>
+            <p>
+                This plugin is located in the Vector menu and can be found in the <a href="https://plugins.qgis.org/plugins/" target="new">QGIS Python Plugins Repository</a>. <br>
+                Now create a new layer with the test dataset provided and lets get started!
+            </p>
+
+            <!--Seccion Functionalities-->
+            <a class="anchor" id="functionalities"></a>
+            <h4 class="subtitle w-100" id="functionalities">Functionalities</h4>
+            <p>
+                The plugin consists of a layer picker(1), three LPPMs(2,3,4), a Data Preview tab(5) and a Results tab(6).
+            </p>
+            <div class="image text-center w-100">
+                <img class="img-responsive thumbnail" src="assets/tutorial/img1.png">
+            </div>
+            <p>
+                The <strong>layer picker</strong> allows you to select one of the valid layers, that means, a Vector Layer with Point geometry, every other layer is filtered out 
+                from the selector. It is initially empty so you have to select the layer by yourself.<br>
+                Next section will tell you everything you need to know about the 
+            </p>
+            <p>
+                The <strong>Data Preview</strong> shows the first 100 or less features of the selected layer 
+                and its fields so you can explore the data. After a new layer is selected the information of the Data Preview tab is automatically updated. 
+                If your data has a field with the same values of the latitude or longitude it will not be shown to avoid revealing 
+                the original location of the points, also, when the data is processed, those fields with location data will dissapear.
+            </p>
+            <div class="image text-center w-100">
+                <img class="img-responsive thumbnail" src="assets/tutorial/img2.png">
+            </div>
+            <p>
+                Each one of the <strong>LPPMs</strong> have its own tab, a set of parameters and a <strong>Process Data</strong> button in the bottom 
+                of its tab. The next section will analyze each mechanism and explain each one of its parameters.
+            </p>
+            <p>
+                After the layer is processed by clicking on the <strong>Process Data</strong> button in any of the <strong>LPPMs</strong>, the <strong>Results</strong> tab 
+                is opened automatically and a temporal layer is created with the name of the mechanism and the original layer projection. 
+                The <strong>Results</strong> tab shows the progress of the mechanism (for large datasets it will take long processing times) and metrics of the 
+                new layer generated.
+            </p>
+            <div class="image text-center w-100">
+                <img class="img-responsive thumbnail" src="assets/tutorial/img3.png">
+            </div>
+            <p>
+                Two metrics are shown as well on the <strong>Results</strong> tab, the Quadratic Error or mean squared error and the point loss. The Quadratic error indicate how alike is the new layer 
+                with the original one by calculating the distance between the new and the original point and showing the mean of all errors squared (see <a href="https://en.wikipedia.org/wiki/Mean_squared_error" target="new">Mean Squared Error</a>). 
+                While the error increases, protection increases, but utility of the data decreases. 
+            </p>
+            <p>
+                Point loss is the amount of points that were erased during processing. Some mechanisms delete the noise of the dataset, but if every point is necessary you may 
+                want this value low.
+            </p>
+            <p>
+                Feel free to process your data as many times as you like testing different values for the parameters until 
+                you find the one you like the most.
+            </p>
+
+            <!--Seccion LPPMs-->
+            <a class="anchor" id="lppm"></a>
+            <h4 class="subtitle w-100" id="functionalities">The Location Privacy Protection Mechanisms (LPPM)</h4>
+            <p class="w-100">
+                There are three LPPMs implemented in this plugin: 
+            </p>
+            <ul>
+                <li><a href="#spatial">Spatial Clustering</a></li>
+                <li><a href="#nrandk">NRandK</a></li>
+                <li><a href="#geoi">Laplace Noise (or Geo indistinguishability)</a></li>
+            </ul>
+
+            <!--Seccion Spatial-->
+            <a class="anchor" id="spatial"></a>
+            <h4 class="subtitle w-100" id="spatial">Spatial Clustering</h4>
+            <p>
+                This is a K-Anonymity mechanism that provides privacy by aggregating points by their distance. <br>
+                This mechanism does a pre-processing, where it <strong>gridifies</strong> data, that means, aggregates data building a virtual grid according to a precission defined by the user.<br>
+                The precission for the gridification is the number of decimals that will be truncated from each coordinate to aggregate points by matching truncated coordinates.<br>
+                After that, the user can choose between K-Means and DBScan as the spatial clustering algorithm for the geolocated data.
+            </p>
+            <p><strong>PRO TIP:</strong></p>
+            <p>
+                Both K-Means and DBSCAN algorithms are very parameter-dependant. Default values are set for small cities but you will have to 
+                tune the parameters very carefully to truly unleash the power of this two clustering algorithms. <br>
+                DBSCAN is really useful for clusters with non-uniform shapes while KMeans works better with evenly distributed data and uniform clusters.
+            </p>
+            <div class="image text-center w-100">
+                <img class="img-responsive thumbnail" src="assets/tutorial/img4.png">
+            </div>
+            <p>
+                This mechanism receives 3 global parameters:
+            </p>
+            <ul>
+                <li><strong>Grid decimal Precision:</strong> Number of decimals to be truncated for the aggregation process (gridification). 
+                    A value of 5 approximates to 10cm, 4 to 10m, 3 to 100m and so on.</li>
+                <li><strong>Clustering algorithm:</strong> Selector with the available clustering algorithms.</li>
+                <li><strong>Minimum K:</strong> Minimum number of points that the cluster needs to group to ensure K-Anonymity.</li>
+            </ul>
+            <p>Additionally, each algorithm accepts its own set of parameters:</p>
+            <p>
+                <strong>- KMeans:</strong> <br>For method explanation see <a href="https://www.youtube.com/watch?v=IuRb3y8qKX4" target="new">KMeans</a>. <br>
+                The parameters that KMeans need are the number of clusters <strong>K</strong> and a <strong>random seed</strong> for reproducibility, 
+                which is zero (0) by default.
+            </p>
+            <p>
+                <strong>- DBScan:</strong> <br>For method explanation see <a href="https://youtu.be/5E097ZLE9Sg?t=44" target="new">DBSCAN</a>. <br>
+                The parameters that DBSCAN need are the <strong>aggregation radius R</strong> and the <strong>minimum quantity of points</strong> that must be grouped to make a cluster. This number 
+                can be different from the global <strong>minumum K</strong>. <br>
+                <strong>Radius</strong> values of 0.00001 approximates to a 10cm radius, 0.0001 to a 1m radius and 0.001 to a 100m radius.
+            </p>
+
+            <!--Seccion NRandK-->
+            <a class="anchor" id="nrandk"></a>
+            <h4 class="subtitle w-100" id="nrandk">NRandK</h4>
+            <p>
+                <strong>NRandK</strong> is an obfuscation Location Privacy Protection Mechanism that provides privacy by modificating the original coordinates of the point.
+            </p>
+            <p>
+                This mechanism consists in applying an algorithm named <strong>NRand</strong> to each point of the dataset by generating <strong>N</strong> random points (four (4) by default) 
+                on a circle of <strong>radius R</strong> and choosing the farthest from the orginal point. <br>
+                The <strong>radius</strong> of the circle of each point is decided by how many points are close to it after an aggregation process.<br>
+                If the number of points that are close to the point is greater than <strong>K</strong>, the point uses an small radius, otherwise uses a larger radius.
+            </p>
+            <div class="image text-center w-100">
+                <img class="img-responsive thumbnail" src="assets/tutorial/img5.png">
+            </div>
+            <p>
+                This mechanism receives 6 parameters:
+            </p>
+            <ul>
+                <li><strong>Grid decimal Precision:</strong> Number of decimals to be truncated for the aggregation process (gridification).<br>
+                    A value of 5 approximates to 10cm, 4 to 10m, 3 to 100m and so on.</li>
+                <li><strong>Number of random points generated:</strong> Number of points that are generated inside the circle for each point. Four by default.</li>
+                <li><strong>Minimum Points:</strong> Number of points that determines if the point uses the small or the large radius.</li>
+                <li><strong>Small radius:</strong> Small radius for points in high density areas. Values of 0.00001 approximates to a 10cm radius, 0.0001 to a 1m radius and 0.001 to a 100m radius.</li>
+                <li><strong>Large radius:</strong> large radius for points in low density areas. Values of 0.00001 approximates to a 10cm radius, 0.0001 to a 1m radius and 0.001 to a 100m radius.</li>
+                <li><strong>Random seed:</strong> Random seed for reproducibility.</li>
+            </ul>
+            <p>You can find the scientific paper <a href="https://www.researchgate.net/publication/325450199_NRand-K_Minimizing_the_Impact_of_Location_Obfuscation_in_Spatial_Analysis" target="new">here</a> </p>
+
+            <!--Seccion GeoI-->
+            <a class="anchor" id="geoi"></a>
+            <h4 class="subtitle w-100" id="geoi">Laplace Noise (or Geo indistinguishability)</h4>
+            <p>
+                This is a differential privacy mechanism that provides privacy by changing the coordinates of a feature generating a new random point following a 
+                <strong>laplacian</strong> distribution. <br>
+                For an explanation of differential privacy see <a href="https://www.youtube.com/watch?v=gI0wk1CXlsQ" target="new">Differential Privacy</a>.
+            </p>
+            <p>
+                Also, it is based on the principle of Geo indistinguishability, explained in <a href="http://www.lix.polytechnique.fr/~catuscia/papers/Geolocation/geo.pdf" target="new">this</a> 
+                paper.
+            </p>
+            <div class="image text-center w-100">
+                <img class="img-responsive thumbnail" src="assets/tutorial/img5.png">
+            </div>
+            <p>
+                This mechanism receives 2 parameters:
+            </p>
+            <ul>
+                <li><strong>Sensitivity:</strong>Sensitivity value of the <strong>Laplace</strong> distribution. <br>
+                A higher value means a larger area where the points can be generated.</li>
+                <li><strong>Random seed:</strong> Random seed for reproducibility.</li>
+            </ul>
+        </div>
+    </div>
+
+    <hr>
+
+    <a class="anchor" id="contribute"></a>
+    <div class="container mt-5 mb-5">
+        <div class="row">
+            <h2 class="title w-100">Contribute</h2>
+            <p>
+                You can contribute with GeoPriv by adding new Location Privacy Protection Mechanisms and reporting bugs and issues.<br>
+                Check the <a target="new" href="https://github.com/Diuke/GeoPriv">project repository</a> and ask our team anything you want about 
+                the source code.
+            </p>
+            
+        </div>
+    </div>
+
+
+    <footer class="container-fluid">
+        <div class="row">
+            <div class="col-md"></div>
+            <div class="col text-justify">
+                <h3 class="w-100 pb-2">License Information</h3>
+                <p>
+                    GeoPriv Plugin is licensed under GNU General Public License v3. <br>
+                    Version 1.0
+                </p>
+            </div>
+
+            <div class="col text-right">
+                <h3>Created by:</h3>
+                <h3 class="mt-4">Juan Pablo Duque</h4>
+                <h4>pjduque@uninorte.edu.co</h4>
+                <h3 class="mt-4">Angelly Pugliese</h4>
+                <h4>angellyp@uninorte.edu.co</h4>
+            </div>
+            <div class="col-md"></div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
