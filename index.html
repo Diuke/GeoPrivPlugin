@@ -115,17 +115,17 @@
                 This plugin integrates three Location Privacy Protection Mechanisms (or LPPM) that were extracted from academic papers and research 
                 to provide technical and non-technical folks a suite of geoprivacy methods to protect their datasets before publishing or exporting.
                 This plugin works with <strong>vector layers</strong> that have <strong>Point</strong> geometries (Multipoint geometries are not supported yet) 
-                and process the layer data with the selected LPPM.
+                and processes the layer data with the selected LPPM.
             </p>
             <p>
-                There are several categories for LPPMs, but for this kind of data we chose to work with obfuscation and K-Anonymity methods, that 
+                There are several categories for LPPMs, but for this kind of data, we chose to work with obfuscation and K-Anonymity methods, that 
                 are well suited for Point geometries and for offline data. <br>
                 Obfuscation methods hide the original location by changing the longitude and latitude of the point to new ones, while K-Anonymity 
                 hides user information and location by grouping similar or close points to be indistinguishable between them.
             </p>
             <p>
                 This plugin is located in the Vector menu and can be found in the <a href="https://plugins.qgis.org/plugins/" target="new">QGIS Python Plugins Repository</a>. <br>
-                Now create a new layer with the test dataset provided and lets get started!
+                Now create a new layer with the test dataset provided and let's get started!
             </p>
 
             <!--Seccion Functionalities-->
@@ -143,16 +143,16 @@
                 Next section will tell you everything you need to know about the 
             </p>
             <p>
-                The <strong>Data Preview</strong> shows the first 100 or less features of the selected layer 
+                The <strong>Data Preview</strong> shows the first 100 or fewer features of the selected layer 
                 and its fields so you can explore the data. After a new layer is selected the information of the Data Preview tab is automatically updated. 
                 If your data has a field with the same values of the latitude or longitude it will not be shown to avoid revealing 
-                the original location of the points, also, when the data is processed, those fields with location data will dissapear.
+                the original location of the points, also, when the data is processed, those fields with location data will disappear.
             </p>
             <div class="image text-center w-100">
                 <img class="img-responsive thumbnail" src="assets/tutorial/img2.png">
             </div>
             <p>
-                Each one of the <strong>LPPMs</strong> have its own tab, a set of parameters and a <strong>Process Data</strong> button in the bottom 
+                Each one of the <strong>LPPMs</strong> has its own tab, a set of parameters and a <strong>Process Data</strong> button in the bottom 
                 of its tab. The next section will analyze each mechanism and explain each one of its parameters.
             </p>
             <p>
@@ -165,12 +165,12 @@
                 <img class="img-responsive thumbnail" src="assets/tutorial/img3.png">
             </div>
             <p>
-                Two metrics are shown as well on the <strong>Results</strong> tab, the Quadratic Error or mean squared error and the point loss. The Quadratic error indicate how alike is the new layer 
+                Two metrics are shown as well on the <strong>Results</strong> tab, the Quadratic Error or mean squared error and the point loss. The Quadratic error indicates how alike is the new layer 
                 with the original one by calculating the distance between the new and the original point and showing the mean of all errors squared (see <a href="https://en.wikipedia.org/wiki/Mean_squared_error" target="new">Mean Squared Error</a>). 
-                While the error increases, protection increases, but utility of the data decreases. 
+                While the error increases, protection increases, but the utility of the data decreases. 
             </p>
             <p>
-                Point loss is the amount of points that were erased during processing. Some mechanisms delete the noise of the dataset, but if every point is necessary you may 
+                Point loss is the number of points that were erased during processing. Some mechanisms delete the noise of the dataset, but if every point is necessary you may 
                 want this value low.
             </p>
             <p>
@@ -195,14 +195,14 @@
             <h4 class="subtitle w-100" id="spatial">Spatial Clustering</h4>
             <p>
                 This is a K-Anonymity mechanism that provides privacy by aggregating points by their distance. <br>
-                This mechanism does a pre-processing, where it <strong>gridifies</strong> data, that means, aggregates data building a virtual grid according to a precission defined by the user.<br>
-                The precission for the gridification is the number of decimals that will be truncated from each coordinate to aggregate points by matching truncated coordinates.<br>
+                This mechanism does a pre-processing, where it <strong>gridifies</strong> data, that means, aggregates data building a virtual grid according to a precision defined by the user.<br>
+                The precision for the gridification is the number of decimals that will be truncated from each coordinate to aggregate points by matching truncated coordinates.<br>
                 After that, the user can choose between K-Means and DBScan as the spatial clustering algorithm for the geolocated data.
             </p>
             <p><strong>PRO TIP:</strong></p>
             <p>
                 Both K-Means and DBSCAN algorithms are very parameter-dependant. Default values are set for small cities but you will have to 
-                tune the parameters very carefully to truly unleash the power of this two clustering algorithms. <br>
+                tune the parameters very carefully to truly unleash the power of these two clustering algorithms. <br>
                 DBSCAN is really useful for clusters with non-uniform shapes while KMeans works better with evenly distributed data and uniform clusters.
             </p>
             <div class="image text-center w-100">
@@ -226,7 +226,7 @@
             <p>
                 <strong>- DBScan:</strong> <br>For method explanation see <a href="https://youtu.be/5E097ZLE9Sg?t=44" target="new">DBSCAN</a>. <br>
                 The parameters that DBSCAN need are the <strong>aggregation radius R</strong> and the <strong>minimum quantity of points</strong> that must be grouped to make a cluster. This number 
-                can be different from the global <strong>minumum K</strong>. <br>
+                can be different from the global <strong>minimum K</strong>. <br>
                 <strong>Radius</strong> values of 0.00001 approximates to a 10cm radius, 0.0001 to a 1m radius and 0.001 to a 100m radius.
             </p>
 
@@ -234,13 +234,13 @@
             <a class="anchor" id="nrandk"></a>
             <h4 class="subtitle w-100" id="nrandk">NRandK</h4>
             <p>
-                <strong>NRandK</strong> is an obfuscation Location Privacy Protection Mechanism that provides privacy by modificating the original coordinates of the point.
+                <strong>NRandK</strong> is an obfuscation Location Privacy Protection Mechanism that provides privacy by the modification of the original coordinates of the point.
             </p>
             <p>
                 This mechanism consists in applying an algorithm named <strong>NRand</strong> to each point of the dataset by generating <strong>N</strong> random points (four (4) by default) 
-                on a circle of <strong>radius R</strong> and choosing the farthest from the orginal point. <br>
+                on a circle of <strong>radius R</strong> and choosing the farthest from the original point. <br>
                 The <strong>radius</strong> of the circle of each point is decided by how many points are close to it after an aggregation process.<br>
-                If the number of points that are close to the point is greater than <strong>K</strong>, the point uses an small radius, otherwise uses a larger radius.
+                If the number of points that are close to the point is greater than <strong>K</strong>, the point uses a small radius, otherwise uses a larger radius.
             </p>
             <div class="image text-center w-100">
                 <img class="img-responsive thumbnail" src="assets/tutorial/img5.png">
@@ -253,8 +253,8 @@
                     A value of 5 approximates to 10cm, 4 to 10m, 3 to 100m and so on.</li>
                 <li><strong>Number of random points generated:</strong> Number of points that are generated inside the circle for each point. Four by default.</li>
                 <li><strong>Minimum Points:</strong> Number of points that determines if the point uses the small or the large radius.</li>
-                <li><strong>Small radius:</strong> Small radius for points in high density areas. Values of 0.00001 approximates to a 10cm radius, 0.0001 to a 1m radius and 0.001 to a 100m radius.</li>
-                <li><strong>Large radius:</strong> large radius for points in low density areas. Values of 0.00001 approximates to a 10cm radius, 0.0001 to a 1m radius and 0.001 to a 100m radius.</li>
+                <li><strong>Small radius:</strong> Small radius for points in high-density areas. Values of 0.00001 approximate to a 10cm radius, 0.0001 to a 1m radius and 0.001 to a 100m radius.</li>
+                <li><strong>Large radius:</strong> large radius for points in low-density areas. Values of 0.00001 approximate to a 10cm radius, 0.0001 to a 1m radius and 0.001 to a 100m radius.</li>
                 <li><strong>Random seed:</strong> Random seed for reproducibility.</li>
             </ul>
             <p>You can find the scientific paper <a href="https://www.researchgate.net/publication/325450199_NRand-K_Minimizing_the_Impact_of_Location_Obfuscation_in_Spatial_Analysis" target="new">here</a> </p>
@@ -264,7 +264,7 @@
             <h4 class="subtitle w-100" id="geoi">Laplace Noise (or Geo indistinguishability)</h4>
             <p>
                 This is a differential privacy mechanism that provides privacy by changing the coordinates of a feature generating a new random point following a 
-                <strong>laplacian</strong> distribution. <br>
+                <strong>Laplacian</strong> distribution. <br>
                 For an explanation of differential privacy see <a href="https://www.youtube.com/watch?v=gI0wk1CXlsQ" target="new">Differential Privacy</a>.
             </p>
             <p>
@@ -278,7 +278,7 @@
                 This mechanism receives 2 parameters:
             </p>
             <ul>
-                <li><strong>Sensitivity:</strong>Sensitivity value of the <strong>Laplace</strong> distribution. <br>
+                <li><strong>Sensitivity:</strong> Sensitivity value of the <strong>Laplace</strong> distribution. <br>
                 A higher value means a larger area where the points can be generated.</li>
                 <li><strong>Random seed:</strong> Random seed for reproducibility.</li>
             </ul>
