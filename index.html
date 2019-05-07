@@ -86,6 +86,9 @@
                 This plugin is our final project for our Computer Science undergrad and is intended to help the Open Source and the GIS community 
                 with a reliable tool for geoprivacy.
             </p>
+            <h5 class="text-center w-100"><strong>
+                If you like the plugin, give it 5 stars!
+            </strong></h5>
         </div>
     </div>
  
@@ -292,11 +295,70 @@
         <div class="row">
             <h2 class="title w-100">Contribute</h2>
             <p>
-                You can contribute with GeoPriv by adding new Location Privacy Protection Mechanisms and reporting bugs and issues.<br>
+                You can contribute to GeoPriv by adding new Location Privacy Protection Mechanisms and reporting bugs and issues.<br>
                 Check the <a target="new" href="https://github.com/Diuke/GeoPriv">project repository</a> and ask our team anything you want about 
                 the source code.
             </p>
-            
+
+            <h4 class="subtitle w-100" id="spatial">Adding a new Location Privacy Protection Mechanism</h4>
+            <p>
+                To add your own methods into this plugin you have to follow some guidelines and use the data structures that we designed to ensure uniformity 
+                between every implemented mechanism. 
+            </p>
+
+            <h5 class="subtitle w-100" id="spatial">Structure of the DataModel</h5>
+            <p>
+                The DataModel is how we distribute the information along the several functionalities of the plugin, making everything uniform and modular. That means 
+                that if someone wants to add a new mechanism it just have to receive the data as a DataModel and return a new DataModel with the processed data.
+            </p>
+            <p>
+                DataModel.py is located into the utils folder in the GeoPriv base folder. The constructor receives the following parameters:
+            </p>
+            <ul class="w-100">
+                <li><strong>layer: </strong>The QgsVectorLayer to process or the data as a list</li>
+                <li><strong>isLayer: </strong>Boolean variable that informs if the layer parameter is a QgsVectorLayer or a List</li>
+            </ul>
+            <p>
+                The DataModel contains the folowing fields:
+            </p>
+            <ul class="w-100">
+                <li><strong>layerData: </strong>Extracts the layer data into a list that is easy to process. 
+                    Each element of the list is an object with the following structure:<br>
+                    <ul>
+                        <li><strong>lat: </strong>Latitude</li>
+                        <li><strong>lon: </strong>Longitude</li>
+                        <li><strong>extraData: </strong>Every other field that each feature of the layer had, to ensure the layer data is keeped.</li>
+                    </ul>
+                
+                </li>
+                <li><strong>fields: </strong>The fields of the layer.</li>
+                <li><strong>isLayer: </strong>Variable that defines if the DataModel's layer that receives as parameter is a QgsVectorLayer or a List.</li>
+            </ul>
+            <p>
+                DataModel contains the following methods:
+                <ul class="w-100">
+                    <li><strong>method2list(data): </strong>Transforms a list of data as {lat, lon, extraData} to a DataModel object.</li>
+                    <li><strong>features2list(data): </strong>Transforms data from a QgsVectorLayer to a DataModel object</li>
+                    <li><strong>list2features(list): </strong>Transforms the list of elements of the DataModel to a list of QgsFeature. Returns the list of fields and features of the DataModel</li>
+                    <li><strong>getFieldData(): </strong>Get the list of the fields of the layer.</li>
+                    <li><strong>setFieldData(fields, data): </strong>Sets the DataModel field list with a new fields List.</li>
+                </ul>
+            </p>
+            <p>
+                Ideally, your Location Privacy Mechanism should receive the layer data that the plugin contains as a DataModel, process it, calculate error and point loss 
+                and return the data as a DataModel. Because every method is different, the error calculation is a matter of each Location Privacy Mechanism separately, 
+                When you are done, you can connect the labels in the user interface to show the error of the new layer. As well, you can calculate the point loss and 
+                print into the results tab. <strong>Only use the Results tab and leave it in the last place in the tab widget.</strong>
+            </p>
+
+            <h4 class="subtitle w-100" id="spatial">Adding the method to the UI</h4>
+            <p>
+                To add a new mechanism, add a new tab to the pluginTabs tab widget in the QT Designer UI, add every field you need as parameters and put a Process Data button in the bottom. <br>
+                After that, create a new method in the geoprivacy.py file located in the base folder of the plugin with the name of your mechanism and connect all of the form fields and buttons.
+            </p>
+            <p>
+                Finally, execute your method inside a try-catch printing error messages if the processing fails and showing the desired metrics when it succeeds.
+            </p>
         </div>
     </div>
 
